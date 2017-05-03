@@ -87,22 +87,22 @@
                     <div class="row">    
                         <div class="about" id="about" border="2">
                             <div>
-                             <h3 style="font-style:italic;font-weight: bold;"><center> MOTIVATION </center></h3>
-                            <h4 style="font-style:italic;">
-                             When we embark research on the project or some topic, we need to find necessary in-depth documents in our chosen research field. However, it would be helpful if we recommend papers related to the seed paper.
+                               <h3 style="font-style:italic;font-weight: bold;"><center> MOTIVATION </center></h3>
+                               <h4 style="font-style:italic;">
+                                   When we embark research on the project or some topic, we need to find necessary in-depth documents in our chosen research field. However, it would be helpful if we recommend papers related to the seed paper.
 
-                             We personally found it interesting because: Every student will gain knowledge from an article and in most of the cases, he will end up with few unanswered questions. Our system will quickly help the students to learn more.
-                             </h4>
-                             <br/><br/><h3 style="font-style:italic;font-weight: bold;"><center>ALGORITHMS IMPLEMENTED </center></h3>
-                             <br/>
-                             <h4 style="font-style:italic;font-weight: bold;"> Article Ranking Using Author/ Venue and Citation Information</h4>
-                             <h4 style="font-style:italic;">
+                                   We personally found it interesting because: Every student will gain knowledge from an article and in most of the cases, he will end up with few unanswered questions. Our system will quickly help the students to learn more.
+                               </h4>
+                               <br/><br/><h3 style="font-style:italic;font-weight: bold;"><center>ALGORITHMS IMPLEMENTED </center></h3>
+                               <br/>
+                               <h4 style="font-style:italic;font-weight: bold;"> Article Ranking Using Author/ Venue and Citation Information</h4>
+                               <h4 style="font-style:italic;">
                                 According to this algorithm, citation is not the only factor that determines the importance of a paper, while other information such as authors, venues are also relevant. This implementation utilizes ranking publication using information about papers, authors, and venues. lack of improvement for public leaderboard results. The fun-damental idea is intuitive: good authors write good papers, and good papers are not only cited by many others, but also published in good journals or conferences.
                             </h4>
                         </div>
 
                         <div>
-                           <p>
+                         <p>
                             <h4 style="font-style:italic;font-weight: bold;"> K Means Clustering</h4>
                             <h4 style="font-style:italic;">
                                 The abstract and title contains the important information about the paper. So we clustered the documents with k means alogrithm using the title and abstract information. So we can recommend the paper to the users based on document similarity.
@@ -110,17 +110,17 @@
                         </p>
                     </div>
                     <div>
-                       <p>
+                     <p>
                         <h4 style="font-style:italic;font-weight: bold;"> Article Recommendation Using Eigen Factor</h4>
                         <h4 style="font-style:italic;">
 
-                         This algorithm recommends articles based on the citation information available for each article. It is a modified version of page rank. The papers are recommended based on the hierarchical clustering and Article Level Eigen Factor scores.
+                           This algorithm recommends articles based on the citation information available for each article. It is a modified version of page rank. The papers are recommended based on the hierarchical clustering and Article Level Eigen Factor scores.
 
-                     </h4>
-                 </p>
-             </div>
+                       </h4>
+                   </p>
+               </div>
 
-             <p>
+               <p>
                 <h4 style="font-weight: bold;">  </h4>
             </p>
 
@@ -138,96 +138,126 @@
         <div>
             <br/><br/><h3 style="font-style:italic;font-weight: bold;"><center>CHALLENGES </center></h3>
             
-             <h4 style="font-style:italic;">
-            The data set is noisy. The articles with no author information, no publication information and no title information surprised us at every stage. So, our cool enhancement is the programming such that the system won't fail given any missing data.
-            The manhattan distance used as a measure to compare articles in model based technique was challenging as it was giving irrelevant documents until we tried to converge the centroids as much acutely as possible. 
-            The matrices dot product in citation based system was challenging with high computation time earlier. Our enhancement for that is to handle the matrix coordinates in a better way making the matrix dot product work in O(n) computation time.
-            It was challenging to understand map equation implementation. 
-            <h4>
-        </div>
-        <br/><br/>
-        <h3 style="font-style:italic;font-weight: bold;"><center>IMPLEMENTATION </center></h3>
-        <div id="implementation">
-         <h4 style="font-style:italic;font-weight: bold;text-align: left !important;"> Article Ranking Using Author/ Venue and Citation Information</h4>
-
-         This implementation ranks articles using information about papers, authors, and venues.
-         The initial paper score is determined using the following equation 
-         <img src="images/1.png" /><br/>
-         <div style="text-align: left;">Next, we compute the score for each author using the paper score. </div>
-         <div style="text-align: left;">Ap - The author score is computed by averaging the scores of his published papers(Ap). Vp-The Venue score computation based on the papers published at the venue.</div>
-         <div style="text-align: left;">Av - The author score obtained from averaging the scores of his published venues.</div>
-         <div style="text-align: left;">Ar - The refined author score is obtained from averaging the scores of his published venues and the published papers.</div>  
-         <div> <img src="images/2.png" /></div><br/>
-         <div>
-            Finally we compute paper score based on the following equations which gives considers citations, venue and author information
-            <div> <img src="images/3.png" /></div><br/>
-            <div class="contact" id="contact">
-                <h3 style="font-style:italic;font-weight: bold;"><br/><br/><br/><br/><center> RESULTS </center></h3>
-                <div> <img src="images/c.png" style="max-height: 50%; max-width: 100%"/></div><br/>
-                <div> <img src="images/d.png" style="max-height: 50%; max-width: 100%"/></div><br/>
-
-                <div id="kmeans">
-                    <h3 style="font-style:italic;font-weight: bold;"><center>K Means </center></h3>
-                    <h3>   we clustered the documents with k means alogrithm using the title and abstract information.</h3>
-                    For each document we Computed the TFIDF scores  and then we took the top 50 TFIDF scores as vectors for each document. 
-                    We selected the initial centers randomly from the vectors of each document
-                    Then we executed Kmeans until the centers converge and then clustered the documents
-                    Now when a user searches for a document, we locate the cluster in which the document is located and then compute the distance between the searched documents and the other documents in the cluster.
-                    Finally we recommend the closest ones in the current document to the users.
+            <h4 style="font-style:italic;">
+                The data set is noisy. The articles with no author information, no publication information and no title information surprised us at every stage. So, our cool enhancement is the programming such that the system won't fail given any missing data.
+                The manhattan distance used as a measure to compare articles in model based technique was challenging as it was giving irrelevant documents until we tried to converge the centroids as much acutely as possible. 
+                The matrices dot product in citation based system was challenging with high computation time earlier. Our enhancement for that is to handle the matrix coordinates in a better way making the matrix dot product work in O(n) computation time.
+                It was challenging to understand map equation implementation. 
+                <h4>
                 </div>
+                <br/><br/>
+                <h3 style="font-style:italic;font-weight: bold;"><center>IMPLEMENTATION </center></h3>
+                <div id="implementation">
+                   <h4 style="font-style:italic;font-weight: bold;text-align: left !important;"> Article Ranking Using Author/ Venue and Citation Information</h4>
 
-               </div> 
+                   This implementation ranks articles using information about papers, authors, and venues.
+                   The initial paper score is determined using the following equation 
+                   <img src="images/1.png" /><br/>
+                   <div style="text-align: left;">Next, we compute the score for each author using the paper score. </div>
+                   <div style="text-align: left;">Ap - The author score is computed by averaging the scores of his published papers(Ap). Vp-The Venue score computation based on the papers published at the venue.</div>
+                   <div style="text-align: left;">Av - The author score obtained from averaging the scores of his published venues.</div>
+                   <div style="text-align: left;">Ar - The refined author score is obtained from averaging the scores of his published venues and the published papers.</div>  
+                   <div> <img src="images/2.png" /></div><br/>
+                   <div>
+                    Finally we compute paper score based on the following equations which gives considers citations, venue and author information
+                    <div> <img src="images/3.png" /></div><br/>
+                    <div class="contact" id="contact">
+                        <h3 style="font-style:italic;font-weight: bold;"><br/><br/><br/><br/><center> RESULTS </center></h3>
+                        <div> <img src="images/c.png" style="max-height: 50%; max-width: 100%"/></div><br/>
+                        <div> <img src="images/d.png" style="max-height: 50%; max-width: 100%"/></div><br/>
+
+                        <div id="kmeans">
+                            <h3 style="font-style:italic;font-weight: bold;"><center>K Means </center></h3>
+                            we clustered the documents with k means alogrithm using the title and abstract information.
+                            For each document we Computed the TFIDF scores  and then we took the top 50 TFIDF scores as vectors for each document. 
+                            We selected the initial centers randomly from the vectors of each document
+                            Then we executed Kmeans until the centers converge and then clustered the documents
+                            Now when a user searches for a document, we locate the cluster in which the document is located and then compute the distance between the searched documents and the other documents in the cluster.
+                            Finally we recommend the closest ones in the current document to the users.
+                        </div>
+
+                        <div id="article">
+                            <h3 style="font-style:italic;font-weight: bold;"><center> Article Recommendation Using Eigen Factor </center></h3>
+
+                            <h4 style="font-style:italic;font-weight: bold;">(1) Assemble Citation Network</center></h4>
+                            The first step requires assembling the citation graph for the large corpus. The first column is the citing paper ID and the column 2 is the cited paper id. <br/>
+                            Format: 1083734 197394###220708###387427
+
+                             <h4 style="font-style:italic;font-weight: bold;">(2) Rank Node</center></h4>
+                            Then we rank each article using “article level eigen factor algorithm” (ALEF). When page rank approaches are applied to acyclic citation graphs older papers are weighted excessively. ALEF is a modified version of page rank.
+                            The ALEF algorithm consists of five steps: 
+                            a.  The teleportation weight, wi for each node i is calculated by summing the in and out citations.
+
+                            <div> <img src="images/t3_1.png" style="max-height: 50%; max-width: 100%"/></div><br/>
+
+                            Forming row stochastic matrix Hij:-
+                            The matrix Zij is then row normalized so that the sum of each row i equals, we call this row stochastic matrix,
 
 
-                <br><br>
-                <h4 style="font-style:italic;font-weight: bold;"> OUR TEAM </h4>
-                <h4 style="font-style:italic;">
+                            <div> <img src="images/t3_2.png" style="max-height: 50%; max-width: 100%"/></div><br/>
 
-                   YUVRAJ SUNDARRAJAN ( # 800903707 ) &nbsp  &nbsp  &nbsp  &nbsp    LAKSHMI ISWARYA KESARI ( # 800972717 ) 
-                   &nbsp  &nbsp  &nbsp  &nbsp  
-                   VALENTINA PALGHADMAL ( # 800966694 )
-                   <br><br>
-                   <h4 style="font-style:italic;font-weight: bold;"> DATA SET </h4>
-
-                   Data Set: AMiner-Paper.rar data set is the focus.
-
-                   <a href="https://aminer.org/billboard/aminernetwork">                  https://aminer.org/billboard/aminernetwork </a> 
+                            Calculating Article Level Eigen Factor:-
+                            The ALEF scores are then calculated by multiplying wi by Hij and normalizing the scores by the number of papers, n, in the corpus 
 
 
-                   <br><br>
-                   <h4 style="font-style:italic;font-weight: bold;">REFERENCES </h4>
-                   [1] A recommendation system based on hierarchical clustering of an article-level citation network Jevin D. West, Ian Wesley-Smith, Carl T. Bergstrom
-                   <br><br>
-                   [2]  M. Rosvall and C. T. Bergstrom, “Maps of random walks on complex networks reveal community structure,” Proceedings of the National Academy of Sciences, vol. 105, no. 4, pp. 1118–1123, 2008.
-                   <br><br>
-                   [3]  M. Rosvall, D. Axelsson, and C. T. Bergstrom, “The map equation,” European Physical Journal: Special Topics, vol. 178, no. 1, pp. 13–23, 2009.
-                   <br><br>
-                   [4] An Efﬁcient Solution to Reinforce Paper Ranking using Author/Venue/Citation Information - The Winner’s Solution for WSDM Cup 2016 
-                   Ming-Han Feng & Kuan-Hou Chan & Huan-Yuan Chen
-                   <br><br>
-                   [5] Evaluating performance of recommender systems: An experimental comparison 
-                   Francois Fouss & Marco Saerens
+                            <div> <img src="images/t3_3.png" style="max-height: 50%; max-width: 100%"/></div><br/>
+                            
+                            (3) Clustering the nodes hierarchically - We cluster the nodes using <a href="http://www.mapequation.org/">Map equation API</a>
 
-               </h4>
+                        </div>
 
-           </h4>
-       </div>
-   </div>
+                    </div> 
 
 
-</div>
+                    <br><br>
+                    <h4 style="font-style:italic;font-weight: bold;"> OUR TEAM </h4>
+                    <h4 style="font-style:italic;">
+
+                     YUVRAJ SUNDARRAJAN ( # 800903707 ) &nbsp  &nbsp  &nbsp  &nbsp    LAKSHMI ISWARYA KESARI ( # 800972717 ) 
+                     &nbsp  &nbsp  &nbsp  &nbsp  
+                     VALENTINA PALGHADMAL ( # 800966694 )
+                     <br><br>
+                     <h4 style="font-style:italic;font-weight: bold;"> DATA SET </h4>
+
+                     Data Set: AMiner-Paper.rar data set is the focus.
+
+                     <a href="https://aminer.org/billboard/aminernetwork">                  https://aminer.org/billboard/aminernetwork </a> 
+
+
+                     <br><br>
+                     <h4 style="font-style:italic;font-weight: bold;">REFERENCES </h4>
+                     [1] A recommendation system based on hierarchical clustering of an article-level citation network Jevin D. West, Ian Wesley-Smith, Carl T. Bergstrom
+                     <br><br>
+                     [2]  M. Rosvall and C. T. Bergstrom, “Maps of random walks on complex networks reveal community structure,” Proceedings of the National Academy of Sciences, vol. 105, no. 4, pp. 1118–1123, 2008.
+                     <br><br>
+                     [3]  M. Rosvall, D. Axelsson, and C. T. Bergstrom, “The map equation,” European Physical Journal: Special Topics, vol. 178, no. 1, pp. 13–23, 2009.
+                     <br><br>
+                     [4] An Efﬁcient Solution to Reinforce Paper Ranking using Author/Venue/Citation Information - The Winner’s Solution for WSDM Cup 2016 
+                     Ming-Han Feng & Kuan-Hou Chan & Huan-Yuan Chen
+                     <br><br>
+                     [5] Evaluating performance of recommender systems: An experimental comparison 
+                     Francois Fouss & Marco Saerens
+
+                 </h4>
+
+             </h4>
+         </div>
+     </div>
+
+
+ </div>
 
 
 
 
 
-<!-- /.container -->
+ <!-- /.container -->
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
+ <!-- jQuery -->
+ <script src="js/jquery.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+ <!-- Bootstrap Core JavaScript -->
+ <script src="js/bootstrap.min.js"></script>
 
 </body>
 
