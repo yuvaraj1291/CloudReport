@@ -46,8 +46,11 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
+                             <li>
+                                <a href="#challenges">Challenges</a>
+                            </li>
                             <li>
-                                <a href="#about">ALGORITHMS </a>
+                                <a href="#about">Alogrithms </a>
                             </li>
                             <li>
                                 <a href="#services">Implementation</a>
@@ -55,6 +58,7 @@
                             <li>
                                 <a href="#contact">Results</a>
                             </li>
+                            
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -89,7 +93,7 @@
                             <div>
                                <h3 style="font-style:italic;font-weight: bold;"><center> MOTIVATION </center></h3>
                                <h4 style="font-style:italic;">
-                                   When we embark research on the project or some topic, we need to find necessary in-depth documents in our chosen research field. However, it would be helpful if we recommend papers related to the seed paper.
+                                   When we embark research on the project or some topic, we need to find necessary in-depth documents in our chosen research field. However,it would be helpful if we recommend papers related to the seed paper.
 
                                    We personally found it interesting because: Every student will gain knowledge from an article and in most of the cases, he will end up with few unanswered questions. Our system will quickly help the students to learn more.
                                </h4>
@@ -97,7 +101,7 @@
                                <br/>
                                <h4 style="font-style:italic;font-weight: bold;"> Article Ranking Using Author/ Venue and Citation Information</h4>
                                <h4 style="font-style:italic;">
-                                According to this algorithm, citation is not the only factor that determines the importance of a paper, while other information such as authors, venues are also relevant. This implementation utilizes ranking publication using information about papers, authors, and venues. lack of improvement for public leaderboard results. The fun-damental idea is intuitive: good authors write good papers, and good papers are not only cited by many others, but also published in good journals or conferences.
+                                According to this algorithm, citation is not the only factor that determines the importance of a paper, while other information such as authors, venues are also relevant. This implementation utilizes ranking publication using information about papers, authors, and venues. The fun-damental idea is good authors write good papers, and good papers are not only cited by many others, but also published in good journals or conferences.
                             </h4>
                         </div>
 
@@ -105,7 +109,7 @@
                          <p>
                             <h4 style="font-style:italic;font-weight: bold;"> K Means Clustering</h4>
                             <h4 style="font-style:italic;">
-                                The abstract and title contains the important information about the paper. So we clustered the documents with k means alogrithm using the title and abstract information. So we can recommend the paper to the users based on document similarity.
+                                The abstract and title contains the most important information about the paper. So we clustered the documents with k means alogrithm using the title and abstract information. So we can recommend the paper to the users based on document similarity.
                             </h4>
                         </p>
                     </div>
@@ -126,54 +130,70 @@
 
         </div>
     </div>
+    <h4 style="font-style:italic;font-weight: bold;"> DATA SET </h4>
+
+             Data Set: AMiner-Paper.rar data set is the focus.
+
+                <h4><a href="https://aminer.org/billboard/aminernetwork">                  https://aminer.org/billboard/aminernetwork </a> </h4>
+                    <h4 style="text-align:center;">This data set contains:<br/>
+                        #index ---- index id of this paper<br/>
+                        #* ---- paper title<br/>
+                        #@ ---- authors (separated by semicolons)<br/>
+                        #o ---- affiliations (separated by semicolons, and each affiliation corresponds to an author in order)<br/>
+                        #t ---- year<br/>
+                        #c ---- publication venue<br/>
+                        #% ---- the id of references of this paper (there are multiple lines, with each indicating a reference)<br/>
+                        #! ---- abstract<br/>
+                     <br><br></h4> 
     <div class="row">
         <div class="services" id="services">
 
-            <h1></h1>
-        </div>
-    </div>
-    <div class="row">
+            
+       
 
 
         <div>
             <br/><br/><h3 style="font-style:italic;font-weight: bold;"><center>CHALLENGES </center></h3>
             
             <h4 style="font-style:italic;">
-                The data set is noisy. The articles with no author information, no publication information and no title information surprised us at every stage. So, our cool enhancement is the programming such that the system won't fail given any missing data.
-                The manhattan distance used as a measure to compare articles in model based technique was challenging as it was giving irrelevant documents until we tried to converge the centroids as much acutely as possible. 
-                The matrices dot product in citation based system was challenging with high computation time earlier. Our enhancement for that is to handle the matrix coordinates in a better way making the matrix dot product work in O(n) computation time.
-                It was challenging to understand map equation implementation. 
+            <li><ul>
+                The data set is noisy. The articles with no author information, no publication information and no title information surprised us at every stage and the job was failing. We handled these scenarios efficiently when we encountered it. </ul>
+                <br/>
+                <ul>The matrices dot product in citation based system was challenging as we had brute force approach. The computation time and space was huge and its failed for the actual data.Then we came up optimised approach to handle it efficiently. The map equation was complex so we used the API to implement it. </ul>
+             </li>  
                 <h4>
                 </div>
                 <br/><br/>
                 <h3 style="font-style:italic;font-weight: bold;"><center>IMPLEMENTATION </center></h3>
                 <div id="implementation">
-                   <h4 style="font-style:italic;font-weight: bold;text-align: left !important;"> Article Ranking Using Author/ Venue and Citation Information</h4>
-
+                   <h4 style="font-style:italic;font-weight: bold;text-align: left !important;"> Article Ranking Using Author/ Venue and Citation Information</h4><br/>
+               
                    This implementation ranks articles using information about papers, authors, and venues.
                    The initial paper score is determined using the following equation 
-                   <img src="images/1.png" /><br/>
+                   <img src="images/1.png" style="max-height: 50%; max-width: 100%"/><br/>
                    <div style="text-align: left;">Next, we compute the score for each author using the paper score. </div>
-                   <div style="text-align: left;">Ap - The author score is computed by averaging the scores of his published papers(Ap). Vp-The Venue score computation based on the papers published at the venue.</div>
+                   <div style="text-align: left;">Ap - The author score is computed by averaging the scores of his published papers(Ap).</div>
+                   <div style="text-align: left;">Vp-The Venue score computation based on the papers published at the venue.</div>
                    <div style="text-align: left;">Av - The author score obtained from averaging the scores of his published venues.</div>
                    <div style="text-align: left;">Ar - The refined author score is obtained from averaging the scores of his published venues and the published papers.</div>  
                    <div> <img src="images/2.png" /></div><br/>
                    <div>
-                    Finally we compute paper score based on the following equations which gives considers citations, venue and author information
+                    Finally we compute paper score based on the following equations which gives considers citations, venue and author information.
                     <div> <img src="images/3.png" /></div><br/>
+                    <img src="images/ps.png" /><br/>
                     <div class="contact" id="contact">
                         <h3 style="font-style:italic;font-weight: bold;"><br/><br/><br/><br/><center> RESULTS </center></h3>
                         <div> <img src="images/c.png" style="max-height: 50%; max-width: 100%"/></div><br/>
                         <div> <img src="images/d.png" style="max-height: 50%; max-width: 100%"/></div><br/>
-
                         <div id="kmeans">
-                            <h3 style="font-style:italic;font-weight: bold;"><center>K Means </center></h3>
-                            we clustered the documents with k means alogrithm using the title and abstract information.
-                            For each document we Computed the TFIDF scores  and then we took the top 50 TFIDF scores as vectors for each document. 
-                            We selected the initial centers randomly from the vectors of each document
-                            Then we executed Kmeans until the centers converge and then clustered the documents
-                            Now when a user searches for a document, we locate the cluster in which the document is located and then compute the distance between the searched documents and the other documents in the cluster.
-                            Finally we recommend the closest ones in the current document to the users.
+                            <h3 style="font-style:italic;font-weight: bold;"><center>K Means Algorithm</center></h3>
+                            <h5 style="text-align: left;"><li><ol>The abstract and title contains the most important information about the paper. So we clustered the documents with k means alogrithm using the title and abstract information.</ol><ol>We clustered the documents with k means alogrithm using the title and abstract information.</ol>
+                            <ol>We computed TFIDF scores for each document.</ol>
+                            <ol>Then We selected the initial centers randomly from the vectors of each document.</ol>
+                            <ol>We executed Kmeans until the centers converge and then clustered the documents</ol>
+                            <ol>Now when a user searches for a document, we locate the cluster in which the document is located and then compute the distance between the searched documents and the other documents in the cluster.</ol>
+                            <ol>Finally we recommend the closest ones in the current document to the users.</ol></h5></li>
+                             <div> <img src="images/t2s.png" style="max-height: 50%; max-width: 100%"/></div><br/>
                         </div>
 
                         <div id="article">
@@ -187,44 +207,49 @@
                             Then we rank each article using “article level eigen factor algorithm” (ALEF). When page rank approaches are applied to acyclic citation graphs older papers are weighted excessively. ALEF is a modified version of page rank.
                             The ALEF algorithm consists of five steps: 
                             a.  The teleportation weight, wi for each node i is calculated by summing the in and out citations.
-
                             <div> <img src="images/t3_1.png" style="max-height: 50%; max-width: 100%"/></div><br/>
-
                             Forming row stochastic matrix Hij:-
                             The matrix Zij is then row normalized so that the sum of each row i equals, we call this row stochastic matrix,
-
-
                             <div> <img src="images/t3_2.png" style="max-height: 50%; max-width: 100%"/></div><br/>
-
                             Calculating Article Level Eigen Factor:-
                             The ALEF scores are then calculated by multiplying wi by Hij and normalizing the scores by the number of papers, n, in the corpus 
-
-
                             <div> <img src="images/t3_3.png" style="max-height: 50%; max-width: 100%"/></div><br/>
-                            
-                            (3) Clustering the nodes hierarchically - We cluster the nodes using <a href="http://www.mapequation.org/">Map equation API</a>
-
+                            <h4 style="font-style:italic;font-weight: bold;">(3) Clustering the nodes hierarchically</center></h4>
+                             We cluster the nodes using <a href="http://www.mapequation.org/">Map equation API</a>
+                             <h4 style="font-style:italic;font-weight: bold;">(4) Recommendation Selection</center></h4>
+                             Now we have eigen factor scores and the clusters of the nodes using Map equation.
+                             Whenever a user searches for a document, we determine the cluster in which the document is located.
+                             Then we rank those documents in that based on the eigen factor scores and display them to the user</a><br/><br/>
+                              <div> <img src="images/t3q.png" style="max-height: 50%; max-width: 100%"/></div><br/><br/>
+                              <div> <img src="images/t3s.png" style="max-height: 50%; max-width: 100%"/></div><br/>
                         </div>
 
                     </div> 
-
-
                     <br><br>
-                    <h4 style="font-style:italic;font-weight: bold;"> OUR TEAM </h4>
-                    <h4 style="font-style:italic;">
+                    <h4 style="font-style:italic;font-weight: bold;"> OUR TEAM & CONTRIBUTIONS <H4>
+                    <h5 style="font-style:italic;">
 
-                     YUVRAJ SUNDARRAJAN ( # 800903707 ) &nbsp  &nbsp  &nbsp  &nbsp    LAKSHMI ISWARYA KESARI ( # 800972717 ) 
+                     YUVARAJ SUNDARRAJAN (800903707) : K-Means algorithm and then search feature to find similar documents, web page design<br/>
+                    LAKSHMI ISWARYA KESARI (800972717) : Citation graph, Article score computation based on author, venue and citation information <br/>
                      &nbsp  &nbsp  &nbsp  &nbsp  
-                     VALENTINA PALGHADMAL ( # 800966694 )
+                     VALENTINA PALGHADMAL(800966694) :  Implemenation of article level eigen factor algorithm,Map equation, Expert Level Search <br/>
                      <br><br>
-                     <h4 style="font-style:italic;font-weight: bold;"> DATA SET </h4>
 
-                     Data Set: AMiner-Paper.rar data set is the focus.
+                     <h4 style="font-style:italic;font-weight: bold;"> 
+                     PERFORMANCE
+                     </h4>
+                     <h5 style="font-style:italic;">
+                     Article Ranking Using Author/ Venue and Citation Information : The articles are ranked statistically and stored in HDFS. It required O(n) space to store  the initial weights of each node.So when a user types a search query using the 
+                     title of the document. The citations of this document are displayed and then ranked according to their paper scores
+                     </h5>
+                     <h5>
+                     K means Clustering: We cluster the documents and store the information in mapping file which contains the document name and its cluster. So whenever an user does a search with the title. We locate the cluster in which the document is located and then find the distance between all the document in the cluster and the document searched.
+                     Finally, we display the most similar documents to the user. The results are not accurate with Kmeans since each author would have his own style of writing. So we can 
+                     implementing semantics 
 
-                     <a href="https://aminer.org/billboard/aminernetwork">                  https://aminer.org/billboard/aminernetwork </a> 
+                     </h5>
 
-
-                     <br><br>
+     
                      <h4 style="font-style:italic;font-weight: bold;">REFERENCES </h4>
                      [1] A recommendation system based on hierarchical clustering of an article-level citation network Jevin D. West, Ian Wesley-Smith, Carl T. Bergstrom
                      <br><br>
@@ -240,10 +265,12 @@
 
                  </h4>
 
+
              </h4>
          </div>
      </div>
-
+      </div>
+   
 
  </div>
 
